@@ -1,0 +1,143 @@
+body{
+    margin: 0;
+    padding: 0;
+    line-height: 1.5rem;
+}
+
+.side_wrap{
+    height: 100vh;
+    display: grid;
+    grid-gap: 10px;
+
+    grid-template-columns: 
+    repeat(4, minmax(500px));
+
+    grid-template-rows: 
+    100px
+    1fr
+    1fr
+    1fr
+    1fr
+    1fr;
+
+    grid-template-areas: 
+    "searchBar      searchBar   searchBar       searchBar"
+    "cathegories    cathegories cathegories     cathegories"
+    "leftPhoto      leftPhoto   rightGallery    rightGallery"
+    "leftPhoto      leftPhoto   rightGallery    rightGallery"
+    "leftPhoto      leftPhoto   rightGallery    rightGallery"
+    "leftPhoto      leftPhoto   rightGallery    rightGallery"
+    ;
+
+}
+
+.searchBar{
+    background-color: rgb(191, 252, 255);
+    grid-area: searchBar;
+}
+
+.cathegories{
+    background-color: aqua;
+    grid-area: cathegories;
+}
+.leftPhoto{
+    background-color: rgb(215, 255, 224);
+    grid-area: leftPhoto;
+}
+.rightGallery{
+    grid-area: rightGallery;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "firstPhotoLS  firstPhotoRS"
+    "firstPhotoLS  firstPhotoRS"
+    "firstPhotoLS  firstPhotoRS"
+    "secondPhotoLS  firstPhotoRS"
+    "secondPhotoLS  secondPhotoRS"
+    "secondPhotoLS  secondPhotoRS"
+    "secondPhotoLS  secondPhotoRS"
+    ;
+}
+
+.firstPhotoLS{
+    background-color: rgb(220, 203, 237);
+    grid-area: firstPhotoLS;
+}
+.secondPhotoLS{
+    background-color: rgb(172, 149, 182);
+    grid-area: secondPhotoLS;
+}
+.firstPhotoRS{
+    background-color: rgb(182, 166, 210);
+    grid-area: firstPhotoRS;
+}
+.secondPhotoRS{
+    background-color: rgb(142, 124, 154);
+    grid-area: secondPhotoRS;
+}
+
+/*Dispositivos móviles 320px*/
+@media screen and (min-width: 0px){
+    .side_wrap{
+        grid-gap: 20px;
+        margin: 10px;
+        grid-template-areas: 
+        "searchBar          searchBar       searchBar          searchBar"
+        "searchBar          searchBar       searchBar          searchBar"
+        "leftPhoto          leftPhoto       leftPhoto       leftPhoto"
+        "leftPhoto          leftPhoto       leftPhoto       leftPhoto"
+        "rightGallery      rightGallery       rightGallery       rightGallery"
+        "rightGallery      rightGallery       rightGallery       rightGallery"
+        ;
+    }
+    .cathegories{ 
+        display: none;
+    }
+
+}
+/*Tabletas*/
+@media screen and (min-width: 481px){
+    .side_wrap{
+        grid-gap: 20px;
+        margin: 10px;
+        grid-template-areas: 
+        "searchBar      searchBar       searchBar          searchBar"
+        "searchBar      searchBar       searchBar          searchBar"
+        "leftPhoto      leftPhoto       rightGallery       rightGallery"
+        "leftPhoto      leftPhoto       rightGallery       rightGallery"
+        "leftPhoto      leftPhoto       rightGallery       rightGallery"
+        "leftPhoto      leftPhoto       rightGallery       rightGallery"
+        ;
+    }
+    .cathegories{ 
+        display: none;
+    }
+
+}
+/*Pantallas pequeñas, laptops*/
+@media screen and (min-width: 769px){
+    .side_wrap{
+        grid-template-areas: 
+        "searchBar      searchBar       searchBar       searchBar"
+        "leftPhoto      leftPhoto       leftPhoto       leftPhoto"
+        "leftPhoto      leftPhoto       leftPhoto       leftPhoto"
+        "rightGallery   rightGallery    rightGallery    rightGallery"
+        "rightGallery   rightGallery    rightGallery    rightGallery"
+        "rightGallery   rightGallery    rightGallery    rightGallery"
+        ;
+    }
+
+    .cathegories{ 
+        display: none;
+    }
+}
+/*Ordenador sobremesa, pantallas grandes*/
+@media (min-width: 1025px){
+
+}
+/*Pantallas extra-grandes, tv*/
+@media (min-width: 1201px){
+    
+}
